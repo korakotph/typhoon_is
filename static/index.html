@@ -1,0 +1,48 @@
+<script>
+async function uploadFile() {
+  const file = document.getElementById("file").files[0]
+  if (!file) return
+
+  document.getElementById("status").innerText = "⏳ กำลังวิเคราะห์..."
+
+  const fd = new FormData()
+  fd.append("file", file)
+
+  const res = await fetch("/analyze", { method: "POST", body: fd })
+  const data = await res.json()
+
+  document.getElementById("json").innerText =
+    JSON.stringify(data, null, 2)
+
+  if (data.analysis.status === "ocr_failed") {
+    document.getElementById("status").innerText =
+      "❌ อ่านเอกสารไม่สำเร็จ กรุณาอัปโหลดใหม่"
+    return
+  }
+
+  document.getElementById("status").innerText = "✅ วิเคราะห์สำเร็จ"
+  renderTable(data.analysis.items)
+  checkVAT(data.analysis.amount)
+}
+
+function renderTable(items) {
+  let html = "<tr><th>สินค้า</th><th>จำนวน</th><th>ราคา</th><th>รวม</th></tr>"
+  items.forEach(i => {
+    html += `<tr>
+      <td>${i.name}</td>
+      <td>${i.quantity}</td>
+      <td>${i.unit_price}</td>
+      <td>${i.total}</td>
+    </tr>`
+  })
+  document.getElementById("items").innerHTML = html
+}
+
+function checkVAT(amount) {
+  const expected = amount.subtotal * amount.vat_rate / 100
+  if (Math.abs(expected - amount.vat_amount) > 1) {
+    document.getElementById("warning").innerText =
+      "⚠️ VAT ไม่ตรงกับยอดคำนวณ"
+  }
+}
+</script>
