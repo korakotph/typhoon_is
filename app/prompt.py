@@ -1,14 +1,18 @@
 FINANCE_PROMPT = """
-คุณคือระบบ AI วิเคราะห์เอกสารการเงิน (ใบกำกับภาษี / ใบเสร็จ)
 
-กฎสำคัญ:
-- ห้ามเดาข้อมูล
-- ถ้าไม่พบข้อมูล ให้ใช้ null หรือ 0
-- ถ้า OCR ไม่ชัด ให้ระบุใน confidence_note
-- ตอบกลับเป็น JSON เท่านั้น (ไม่มี markdown)
+You are a financial document parser.
 
-โครงสร้าง JSON:
+TASK:
+Extract key fields from the following OCR text.
 
+RULES:
+- Respond ONLY in valid JSON
+- Do NOT explain
+- Do NOT repeat OCR text
+- If a field is missing, use null
+- Be concise
+
+OUTPUT JSON SCHEMA:
 {
   "document_type": "INVOICE | RECEIPT | UNKNOWN",
   "document_number": null,
@@ -16,12 +20,14 @@ FINANCE_PROMPT = """
   "seller": {
     "name": null,
     "tax_id": null,
-    "date_time": null
+    "date_time": null,
+    "address": null
   },
   "buyer": {
     "name": null,
     "tax_id": null,
-    "date_time": null
+    "date_time": null,
+    "address": null
   },
   "items": [
     {
@@ -39,4 +45,9 @@ FINANCE_PROMPT = """
   },
   "confidence_note": ""
 }
+
+OCR TEXT:
+<<<
+{OCR_TEXT}
+>>>
 """
