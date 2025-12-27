@@ -1,0 +1,41 @@
+{
+  "id": "e496ec37-e3e7-4b52-805a-cb0587a7a5d7",
+  "filename": "20251219150714_page-0003.jpg",
+  "created_at": "2025-12-27T20:34:16.109373",
+  "ocr": {
+    "text": "»\nusin laadivind sans ana\n, Vertex Trading Co., Ltd.\n\na fl td 4 ~\nantinnwulng) : 101/56 VAM 20 A.ARBINUS B.ARaINAT aalnuan 12120101/56 Moo 20, T.Klongnueng, A.Kiongluang, Pathumthani, 12120 Thailand.\n\nHead Office\nTel : 0-2520-5133-36 Fax : 0-2529-2254, 0-2529-4675\n\nIumiumiAuastum\nTAX INVOICE/DELIVERY ORDER\n\nvanulsedadagidenri 0135537001917 tanarsaantiduga\n\ngefiey\n\nustomer/Address\nWin weiitady woud usin van (anias'lyal) (me 1V9077167 | aa LO/1L/6877/77 wl 3 mATaanu achwhal No. Date\n\nanniaga ams 11120 wean 45 Anite 03/01/69\n\ntanisetaaae Aun 0105548117733 Seciniom Bue Date\naingnty = 5467 winewns — 13-MaVORe3369hRMFeaw  POGBIO/151\nCustomer Code \\ Salesman Ref. P/O No..\n\naun\ntem No.\n\nProduct Codel|\n\nqwqu\n\nquay\nQuantity A\n\nnount\n\naes Vv Authorized Signature\n\nvaneing :\n\n© (unailitlidnetunidlurhuun Houszslesthsenenileliiiny usin 1.5 %  slate tuwifufiatia\n\nIncase saitlemetis not made within the period, an interest rate of 1.5 %  per month fs charge! from dus date\n© idedwudhuhudn ngandvnudninniestuu Vain Mashing msade dria usitoshitedae\n\npayment is made by cheque, please cross and pay to Vertex Trading Co., Ltd. and cross out the bearer\n© auhriidawmuienutusnyjae sundiyteldines uataduutouuda\n\nAl goods are belong to Vertex Trading Co., Ltd. untl all payment are completely made.\n\nwy Peet gs Aye\nVWiLaudrosemstiulignteuarieusenuda\nReceive the above goods in good order and condition.\n\nfuses\nReceived by\n\nPyal :\nau\nDate «.\n\n1 nvanwa ARO 30001 (IAN, )FOOD GRADE 100. OOUWAY 112,000.00\n(300 Tue aA) |\n; : H\nTUT 200 a9 |\n|\n/ |\n|\n!\n|\n|\n|\n|\n|\n|\n4 {\nmye ii\n72\n: at fia an unidu E.80.E, aundatu\nHawa (TAMAS AT (NAT Total Amount 112,000.00\nenue 7.00  %  7,840.0\n: — angiya i 0 .00\num ileal A wiuiasasaauyantay) Souautusoumetu 119,840.00\nBahk ( Grand Total )\na Hasaos dildrunaasuin '",
+    "char_count": 1777,
+    "word_count": 281
+  },
+  "analysis": {
+    "status": "success",
+    "data": {
+      "document_type": "RECEIPT",
+      "document_number": null,
+      "document_date": null,
+      "seller": {
+        "name": "Vertex Trading Co., Ltd.",
+        "tax_id": null
+      },
+      "buyer": {
+        "name": null,
+        "tax_id": null
+      },
+      "items": [
+        {
+          "name": "30001 (IAN, )FOOD GRADE",
+          "quantity": 100,
+          "unit_price": 1120.0,
+          "total": 112000.0
+        }
+      ],
+      "amount": {
+        "subtotal": 112000.0,
+        "vat_rate": 7,
+        "vat_amount": 7840.0,
+        "total": 119840.0
+      },
+      "confidence_note": ""
+    }
+  }
+}

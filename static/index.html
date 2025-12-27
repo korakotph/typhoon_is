@@ -1,48 +1,43 @@
 <script>
-async function uploadFile() {
-  const file = document.getElementById("file").files[0]
-  if (!file) return
+async function analyze() {
+  const fileInput = document.getElementById("file");
+  const status = document.getElementById("status");
+  const result = document.getElementById("result");
 
-  document.getElementById("status").innerText = "⏳ กำลังวิเคราะห์..."
+  if (!fileInput.files.length) return;
 
-  const fd = new FormData()
-  fd.append("file", file)
+  const formData = new FormData();
+  formData.append("file", fileInput.files[0]);
 
-  const res = await fetch("/analyze", { method: "POST", body: fd })
-  const data = await res.json()
+  status.innerText = "⏳ กำลังวิเคราะห์เอกสารด้วย Typhoon...";
+  result.innerHTML = "";
 
-  document.getElementById("json").innerText =
-    JSON.stringify(data, null, 2)
+  const res = await fetch("/analyze", {
+    method: "POST",
+    body: formData
+  });
 
-  if (data.analysis.status === "ocr_failed") {
-    document.getElementById("status").innerText =
-      "❌ อ่านเอกสารไม่สำเร็จ กรุณาอัปโหลดใหม่"
-    return
+  const data = await res.json();
+
+  status.innerText = "✅ วิเคราะห์เสร็จแล้ว";
+
+  // JSON
+  result.innerHTML += `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+
+  // ตารางสินค้า
+  if (data.analysis?.data?.items?.length) {
+    let table = "<table border='1'><tr><th>สินค้า</th><th>จำนวน</th><th>ราคา</th></tr>";
+    data.analysis.data.items.forEach(i => {
+      table += `<tr><td>${i.name}</td><td>${i.qty}</td><td>${i.price}</td></tr>`;
+    });
+    table += "</table>";
+    result.innerHTML += table;
   }
 
-  document.getElementById("status").innerText = "✅ วิเคราะห์สำเร็จ"
-  renderTable(data.analysis.items)
-  checkVAT(data.analysis.amount)
-}
-
-function renderTable(items) {
-  let html = "<tr><th>สินค้า</th><th>จำนวน</th><th>ราคา</th><th>รวม</th></tr>"
-  items.forEach(i => {
-    html += `<tr>
-      <td>${i.name}</td>
-      <td>${i.quantity}</td>
-      <td>${i.unit_price}</td>
-      <td>${i.total}</td>
-    </tr>`
-  })
-  document.getElementById("items").innerHTML = html
-}
-
-function checkVAT(amount) {
-  const expected = amount.subtotal * amount.vat_rate / 100
-  if (Math.abs(expected - amount.vat_amount) > 1) {
-    document.getElementById("warning").innerText =
-      "⚠️ VAT ไม่ตรงกับยอดคำนวณ"
+  // VAT Warning
+  const a = data.analysis?.data?.amount;
+  if (a && Math.abs(a.subtotal * a.vat_rate / 100 - a.vat_amount) > 1) {
+    result.innerHTML += "<p style='color:red'>⚠️ VAT ไม่ตรง</p>";
   }
 }
 </script>

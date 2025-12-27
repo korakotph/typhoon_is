@@ -1,0 +1,57 @@
+{
+  "id": "3248d77d-fa1a-4d93-93db-725cf5f9cc72",
+  "filename": "20251219150714_page-0008.jpg",
+  "created_at": "2025-12-27T20:37:22.094984",
+  "ocr": {
+    "text": "1 t 7\n\nee ee ee CRT ERGREIEDY:\n\nNN 199/22 m3 lun JosWa ntusmswey uerravinud woursiens nn, 10220 Pt ton\nTus: 099-557-7177 Sua : sales. BQX@gmail.com tat: @B-Q-X —\n\nsauusedroayiaunrs 0105556123607\n\nJuudwnit/luaavos/Turindtuard aes\ndoyda wav usused uous unused sarin (Antanulug) svagneay 0167 iavidllumaums 2568/349\nway 77/77 va 3 ouvesaanu siuathulual dunaurninga sud 25/11/2025 Tuas $025000568\nAautauunud 11120 marhwuodisetu 1aséin 30 Turunen: 25/12/2025\n\nTudeto\nlaaussshohdidunrdoins 0105548117733 Porsinsio Am ind\naay mun [who [ioe | navnte aude\n|\ni 02070023 nsjn PET 10x10 CM. sinognas 1728 tu Cin | 64,608.0027,648.002 02070102 nsjn PET 8.5x15 CM. shisdlnast'804 tu Ctn 34,288.0012,864.003 02070022 nen PET 10x10 CM. shia 1152 tu Ctn 44,320.0017,280.00\nMaMuriautnduaa | 57,792.00\nauan 14,448.00\nnenqus 40,508.41\nAnyarrutin 7 %  2,835.59\nchdnws (andluanuvuantoudauduimein) TUM ByAR UL 43,344.00\niin C ES\n( Ww food Thm)\ns:. BUA foods ~\n« 4\ni\" tui... Compan Limited = 1/..... a 1s =",
+    "char_count": 988,
+    "word_count": 153
+  },
+  "analysis": {
+    "status": "success",
+    "data": {
+      "document_type": "INVOICE",
+      "document_number": null,
+      "document_date": {
+        "day": "25",
+        "month": "11",
+        "year": "2025"
+      },
+      "seller": {
+        "name": "B-Q-X Company Limited",
+        "tax_id": "0105556123607"
+      },
+      "buyer": {
+        "name": null,
+        "tax_id": null
+      },
+      "items": [
+        {
+          "name": "PET 10x10 CM. signboard 1728 tu Ctn",
+          "quantity": 1,
+          "unit_price": 64.6080027,
+          "total": 64.6080027
+        },
+        {
+          "name": "PET 8.5x15 CM. signboard 804 tu Ctn",
+          "quantity": 1,
+          "unit_price": 34.2880012,
+          "total": 34.2880012
+        },
+        {
+          "name": "PET 10x10 CM. signboard 1152 tu Ctn",
+          "quantity": 1,
+          "unit_price": 44.3200017,
+          "total": 44.3200017
+        }
+      ],
+      "amount": {
+        "subtotal": 57.792,
+        "vat_rate": 7,
+        "vat_amount": 2.83559,
+        "total": 60.62759
+      },
+      "confidence_note": ""
+    }
+  }
+}

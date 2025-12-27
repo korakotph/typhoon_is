@@ -15,11 +15,13 @@ FINANCE_PROMPT = """
   "document_date": null,
   "seller": {
     "name": null,
-    "tax_id": null
+    "tax_id": null,
+    "date_time": null
   },
   "buyer": {
     "name": null,
-    "tax_id": null
+    "tax_id": null,
+    "date_time": null
   },
   "items": [
     {
